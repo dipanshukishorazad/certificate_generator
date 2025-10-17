@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 50px;
+}
+.card {
+  border: 10px solid #2b6cb0;
+  padding: 40px;
+  border-radius: 10px;
+}
+.title {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.name {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 20px 0;
+}
+.course {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+.footer {
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-between;
+}
+.footer div {
+  text-align: left;
+}
+</style>
+</head>
+<body>
+<div class="card">
+  {% if logo %}
+    <img src="{{ logo }}" style="max-height:80px;">
+  {% endif %}
+  <div class="title">Certificate of Completion</div>
+  <div>This is to certify that</div>
+  <div class="name">{{ name }}</div>
+  <div class="course">has successfully completed <strong>{{ course }}</strong></div>
+  <div>{{ description }}</div>
+  <div class="footer">
+    <div>Date: {{ issue_date }}</div>
+    <div>
+      {% if signature %}
+        <img src="{{ signature }}" style="max-height:80px;"><br>
+      {% endif %}
+      Authorized Signature
+    </div>
+  </div>
+</div>
+</body>
+</html>
